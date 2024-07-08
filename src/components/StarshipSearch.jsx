@@ -3,8 +3,8 @@ import { searchStartships } from "../services/starshipService";
 
 const StarshipSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const searchHandler = () => {
-    searchStartships(searchTerm);
+  const searchHandler = async () => {
+    const data = await searchStartships(searchTerm);
   };
   return (
     <div className="mb-3">
