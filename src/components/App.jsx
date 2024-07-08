@@ -1,5 +1,6 @@
 // import StarshipSearch from "./StarshipSearch";
 import StarshipList from "./StarshipList";
+import StarshipSearch from "./StarshipSearch";
 import { getAllStartships } from "../services/starshipService";
 
 import { useState, useEffect } from "react";
@@ -18,7 +19,10 @@ const App = () => {
   }, []);
 
   return (
-    <>{starships.length !== 0 && <StarshipList starships={starships} />}</>
+    <>
+      <StarshipSearch />
+      {starships.length !== 0 && <StarshipList starships={starships} />}
+    </>
   );
 };
 

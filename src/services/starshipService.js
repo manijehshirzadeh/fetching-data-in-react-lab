@@ -11,4 +11,15 @@ const getAllStartships = async () => {
   }
 };
 
-export { getAllStartships };
+const searchStartships = async (searchTerm) => {
+  try {
+    const response = await fetch(BASE_URL + "/starships/?search=" + searchTerm);
+    const data = await response.json();
+    console.log("data", data);
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export { getAllStartships, searchStartships };
