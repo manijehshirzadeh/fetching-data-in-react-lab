@@ -22,7 +22,12 @@ const App = () => {
 
   return (
     <>
-      <StarshipSearch />
+      <StarshipSearch
+        onSearch={(data) => {
+          setStarships(data.results);
+          setNumberOfResults(data.count);
+        }}
+      />
       {starships.length !== 0 && (
         <StarshipList starships={starships} numberOfResults={numberOfResults} />
       )}

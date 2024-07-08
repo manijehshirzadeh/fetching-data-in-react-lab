@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { searchStartships } from "../services/starshipService";
 
-const StarshipSearch = () => {
+const StarshipSearch = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const searchHandler = async () => {
     const data = await searchStartships(searchTerm);
+    props.onSearch(data);
   };
   return (
     <div className="mb-3">
