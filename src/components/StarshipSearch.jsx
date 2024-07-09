@@ -8,22 +8,30 @@ const StarshipSearch = (props) => {
     props.onSearch(data);
   };
   return (
-    <div className="mb-3">
-      <h2>Search</h2>
-
-      <label htmlFor="formGroupExampleInput" className="form-label">
-        search Team:
-      </label>
-      <input
-        type="search"
-        className="form-control"
-        id="formGroupExampleInput"
-        placeholder="Search Team"
-        onChange={(event) => setSearchTerm(event.target.value)}
-        value={searchTerm}
-      />
-      <button onClick={searchHandler}>Search</button>
-    </div>
+    <form>
+      <div className="mb-3">
+        <h1>Star Wars API</h1>
+        <h2>Search</h2>
+        <div style={{ display: "flex" }}>
+          <label className="form-label">search Team:</label>
+          <input
+            style={{ width: "20%" }}
+            type="search"
+            className="form-control"
+            placeholder="Search Team"
+            onChange={(event) => setSearchTerm(event.target.value)}
+            value={searchTerm}
+          />
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={searchHandler}
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 

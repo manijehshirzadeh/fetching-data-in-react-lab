@@ -1,9 +1,11 @@
 // import StarshipSearch from "./StarshipSearch";
+import { useState, useEffect } from "react";
+
 import StarshipList from "./StarshipList";
 import StarshipSearch from "./StarshipSearch";
 import { getAllStartships } from "../services/starshipService";
 
-import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   const [starships, setStarships] = useState([]);
@@ -11,7 +13,6 @@ const App = () => {
 
   const fetchData = async () => {
     const data = await getAllStartships();
-
     setStarships(data.results);
     setNumberOfResults(data.count);
   };
